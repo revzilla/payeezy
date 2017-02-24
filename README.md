@@ -1,7 +1,6 @@
 # Payeezy
 
-An elixir library for Payeezy payment. Right now this supports ValueLink gift card transactions
-only.
+An elixir library for Payeezy payment. Currently supports ValueLink gift card transactions only.
 
 ## Installation
 
@@ -28,5 +27,3 @@ config :payeezy,
   token: [MERCHANT_TOKEN],
   apisecret: [ACCOUNT_API_SECRET]
 ```
-
-Specify `environment: :sandbox` and sandbox credentials when working outside of production environment.
