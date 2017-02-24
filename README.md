@@ -2,6 +2,8 @@
 
 An elixir library for Payeezy payment. Currently supports ValueLink gift card transactions only.
 
+See API documentation [here](https://developer.payeezy.com/payeezy-api/apis/)
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
