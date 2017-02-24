@@ -17,7 +17,7 @@ defmodule Payeezy.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :poison, :decimal, :httpoison]]
+    [applications: [:logger, :poison, :httpoison]]
   end
 
   defp description do
