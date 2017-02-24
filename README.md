@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/revzilla/payeezy.svg?branch=master)](https://travis-ci.org/revzilla/payeezy)
+
+[![Coverage Status](https://coveralls.io/repos/github/revzilla/payeezy/badge.svg?branch=master)](https://coveralls.io/github/revzilla/payeezy?branch=master)
+
 # Payeezy
 
 An elixir library for Payeezy payment. Currently supports ValueLink gift card transactions only.
