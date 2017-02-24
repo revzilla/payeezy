@@ -24,7 +24,6 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 To setup, place credentials in your {env}.ex or {env}.secret.ex config files as shown below:
 ```
 config :payeezy,
-  environment: :production,
   apikey: [ACCOUNT_API_KEY],
   token: [MERCHANT_TOKEN],
   apisecret: [ACCOUNT_API_SECRET]
