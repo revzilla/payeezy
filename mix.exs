@@ -1,7 +1,7 @@
 defmodule Payeezy.Mixfile do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [app: :payeezy,
@@ -17,15 +17,15 @@ defmodule Payeezy.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :poison, :decimal, :httpoison, :bypass]]
+    [applications: [:logger, :poison, :httpoison]]
   end
-  
+
   defp description do
     """
     Payeezy API library for Elixir.
     """
   end
-  
+
   defp package do
     [maintainers: ["RevZilla", "Tyler Cain"],
      licenses: ["MIT"],
@@ -36,13 +36,12 @@ defmodule Payeezy.Mixfile do
   defp deps do
     [
       {:poison, "~> 2.1"},
-      {:decimal, "~> 1.3"},
       {:httpoison, "~> 0.9.0"},
       {:bypass, "~> 0.6.0", only: :test},
       {:excoveralls, "~> 0.6", only: :test},
-      {:plug, "~> 1.3"},
+      {:plug, "~> 1.3", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
-  
+
 end

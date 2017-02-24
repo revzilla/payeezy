@@ -104,7 +104,7 @@ defmodule Payeezy.HTTP do
   end
 
   defp generate_nonce do
-    :rand.uniform |> Decimal.new |> Decimal.to_string |> String.replace("0.", "") |> String.to_integer
+    :rand.uniform |> to_string |> String.replace("0.", "") |> String.to_integer
   end
 
   defp timestamp do
