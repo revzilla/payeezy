@@ -9,7 +9,7 @@ defmodule Payeezy.Integration.GiftCardTest do
       apikey: Application.put_env(:payeezy, :apikey, "fake"),
       token: Application.put_env(:payeezy, :token, "fake"),
       apisecret: Application.put_env(:payeezy, :apisecret, "fake"),
-      payeezy_bypass: (if context[:skip_payeezy_bypass], do: nil, else: build_bypass)
+      payeezy_bypass: (if context[:skip_payeezy_bypass], do: nil, else: build_bypass())
     }
   end
 
@@ -110,7 +110,7 @@ defmodule Payeezy.Integration.GiftCardTest do
   end
 
   test "balance_inquiry/1 fails when missing cc number", %{payeezy_bypass: payeezy_bypass} do
-    response = purchase_failure_missing_cc_response_string
+    response = purchase_failure_missing_cc_response_string()
     params = %{valuelink: %{cardholder_name: "Joe Smith", credit_card_type: "Gift"}}
 
     payeezy_bypass
@@ -140,7 +140,7 @@ defmodule Payeezy.Integration.GiftCardTest do
   end
 
   test "purchase/1 fails when cc number is not specified", %{payeezy_bypass: payeezy_bypass} do
-    response = purchase_failure_missing_cc_response_string
+    response = purchase_failure_missing_cc_response_string()
     params = %{
       amount: "400",
       post_date: "04032016",

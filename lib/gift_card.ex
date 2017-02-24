@@ -109,6 +109,7 @@ defmodule Payeezy.GiftCard do
     PostTransaction.handle_response(__MODULE__, post_params)
   end
 
+  @spec defaults(String.t) :: map
   defp defaults(endpoint) do
     %{
       transaction_type: endpoint,
@@ -116,6 +117,7 @@ defmodule Payeezy.GiftCard do
     }
   end
 
+  @spec merge_params(map, map) :: map
   defp merge_params(current_map, %{valuelink: %{"cc_number" => cc_number}} = params) do
     merged_valuelink_params = Map.merge(params[:valuelink], %{"cc_number" => strip_gift_card(cc_number)})
     do_merge_valuelink_params(current_map, params, merged_valuelink_params)
@@ -132,6 +134,7 @@ defmodule Payeezy.GiftCard do
     |> Map.merge(current_map)
   end
 
+  @spec strip_gift_card(String.t) :: String.t
   defp strip_gift_card(nil), do: nil
   defp strip_gift_card(cc_string) do
     String.replace(cc_string, ~r/\D/, "")

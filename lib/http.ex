@@ -79,8 +79,8 @@ defmodule Payeezy.HTTP do
     apikey = Payeezy.get_env(:apikey)
     token = Payeezy.get_env(:token)
     apisecret = Payeezy.get_env(:apisecret)
-    epoch_timestamp = timestamp
-    nonce = generate_nonce
+    epoch_timestamp = timestamp()
+    nonce = generate_nonce()
     payload = Poison.encode!(body)
 
     string_nonce = nonce |> Integer.to_string
