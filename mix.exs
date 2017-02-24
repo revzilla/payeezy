@@ -40,6 +40,8 @@ defmodule Payeezy.Mixfile do
       {:httpoison, "~> 0.9.0"},
       {:bypass, "~> 0.6.0", only: :test},
       {:excoveralls, "~> 0.6", only: :test},
+      {:plug, "~> 1.3"},
+      {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
   
