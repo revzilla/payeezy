@@ -83,9 +83,8 @@ defmodule Payeezy.HTTP do
     nonce = generate_nonce()
     payload = Poison.encode!(body)
 
-    string_nonce = nonce |> Integer.to_string
     string_timestamp = epoch_timestamp |> Integer.to_string
-    data = apikey <> string_nonce <> string_timestamp <> token <> payload
+    data = apikey <> nonce <> string_timestamp <> token <> payload
 
     authorization = generate_hmac(apisecret, data)
 
@@ -104,7 +103,7 @@ defmodule Payeezy.HTTP do
   end
 
   defp generate_nonce do
-    :rand.uniform |> to_string |> String.replace("0.", "") |> String.to_integer
+    :rand.uniform |> to_string |> String.replace("0.", "")
   end
 
   defp timestamp do
