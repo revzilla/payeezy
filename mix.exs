@@ -1,7 +1,7 @@
 defmodule Payeezy.Mixfile do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [app: :payeezy,
@@ -37,9 +37,9 @@ defmodule Payeezy.Mixfile do
     [
       {:poison, "~> 2.1"},
       {:httpoison, "~> 0.9.0"},
-      {:bypass, "~> 0.6.0", only: :test},
+      {:bypass, "~> 0.6.0", only: [:test, :dev]},
       {:excoveralls, "~> 0.6", only: :test},
-      {:plug, "~> 1.3", only: :test},
+      {:plug, "~> 1.3", only: [:test, :dev]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
