@@ -36,9 +36,9 @@ defmodule Payeezy.Mixfile do
   defp deps do
     [
       {:poison, "~> 2.1"},
-      {:httpoison, "~> 0.9.0"},
+      {:httpoison, "~> 0.12"},
       {:bypass, "~> 0.6.0", only: [:test, :dev]},
-      {:excoveralls, "~> 0.6", only: :test},
+      {:excoveralls, "~> 0.7", only: :test},
       {:plug, "~> 1.3", only: [:test, :dev]},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
