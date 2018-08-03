@@ -14,19 +14,23 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
   1. Add payeezy to your list of dependencies in `mix.exs`:
 
+        ```elixir
         def deps do
-          [{:payeezy, "~> 0.0.1"}]
+          [{:payeezy, "~> 0.1.3"}]
         end
+        ```
 
   2. Ensure payeezy is started before your application:
 
+        ```elixir
         def application do
           [applications: [:payeezy]]
         end
+        ```
 
 ## Setup
 To setup, place credentials in your {env}.ex or {env}.secret.ex config files as shown below:
-```
+```elixir
 config :payeezy,
   apikey: [ACCOUNT_API_KEY],
   token: [MERCHANT_TOKEN],
