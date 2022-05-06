@@ -34,5 +34,6 @@ To setup, place credentials in your {env}.ex or {env}.secret.ex config files as 
 config :payeezy,
   apikey: [ACCOUNT_API_KEY],
   token: [MERCHANT_TOKEN],
-  apisecret: [ACCOUNT_API_SECRET]
+  apisecret: [ACCOUNT_API_SECRET],
+  endpoint: [PAYEEZY_API_URL]
 ```
