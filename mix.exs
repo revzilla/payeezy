@@ -1,13 +1,14 @@
 defmodule Payeezy.Mixfile do
   use Mix.Project
 
-  @version "0.1.3"
+  @version "0.1.4"
 
   def project do
     [
       app: :payeezy,
       version: @version,
-      elixir: "~> 1.3",
+      elixir: "~> 1.11.4",
+      elixirc_paths: elixrc_paths(Mix.env()),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
@@ -17,6 +18,9 @@ defmodule Payeezy.Mixfile do
       deps: deps()
     ]
   end
+
+  defp elixrc_paths(:test), do: ["lib", "test/support"]
+  defp elixrc_paths(_), do: ["lib"]
 
   def application do
     [applications: [:logger, :poison, :httpoison]]
@@ -30,7 +34,7 @@ defmodule Payeezy.Mixfile do
 
   defp package do
     [
-      maintainers: ["RevZilla", "Tyler Cain", "Steve DeGele"],
+      maintainers: ["RevZilla", "Tyler Cain", "Steve DeGele", "Jan Gromko"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/revzilla/payeezy"},
       files: ~w(lib mix.exs README.md CHANGELOG.md)
@@ -44,7 +48,8 @@ defmodule Payeezy.Mixfile do
       {:bypass, "~> 0.6.0", only: [:test, :dev]},
       {:excoveralls, "~> 0.7", only: :test},
       {:plug, "~> 1.3", only: [:test, :dev]},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 end
