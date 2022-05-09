@@ -16,7 +16,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
         ```elixir
         def deps do
-          [{:payeezy, "~> 0.1.3"}]
+          [{:payeezy, "~> 0.1.4"}]
         end
         ```
 
@@ -34,5 +34,6 @@ To setup, place credentials in your {env}.ex or {env}.secret.ex config files as 
 config :payeezy,
   apikey: [ACCOUNT_API_KEY],
   token: [MERCHANT_TOKEN],
-  apisecret: [ACCOUNT_API_SECRET]
+  apisecret: [ACCOUNT_API_SECRET],
+  endpoint: [PAYEEZY_API_URL]
 ```

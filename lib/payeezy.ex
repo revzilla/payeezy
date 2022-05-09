@@ -29,7 +29,7 @@ defmodule Payeezy do
       iex> Payeezy.get_env(:random_value)
       ** (Payeezy.ConfigError) missing config for :random_value
   """
-  @spec get_env(atom) :: any
+  @spec get_env(atom()) :: any()
   def get_env(key) do
     Application.get_env(:payeezy, key) || raise ConfigError, key
   end
