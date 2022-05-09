@@ -48,7 +48,7 @@ defmodule Payeezy.Mixfile do
       {:bypass, "~> 0.6.0", only: [:test, :dev]},
       {:excoveralls, "~> 0.7", only: :test},
       {:plug, "~> 1.3", only: [:test, :dev]},
-      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:ex_doc, "~> 0.27", only: [:dev], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
