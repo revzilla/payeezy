@@ -23,7 +23,7 @@ defmodule Payeezy.Mixfile do
   defp elixrc_paths(_), do: ["lib"]
 
   def application do
-    [applications: [:logger, :poison, :httpoison]]
+    [extra_applications: [:logger]]
   end
 
   defp description do
