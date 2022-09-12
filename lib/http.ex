@@ -84,7 +84,11 @@ defmodule Payeezy.HTTP do
   end
 
   defp generate_hmac(key, data) do
-    Base.encode64(Base.encode16(:crypto.hmac(:sha256, key, "#{data}"), case: :lower))
+    if Code.ensure_loaded?(:crypto) and function_exported?(:crypto, :mac, 4) do
+      Base.encode64(Base.encode16(:crypto.mac(:hmac, :sha256, key, "#{data}"), case: :lower))
+    else
+      Base.encode64(Base.encode16(:crypto.hmac(:sha256, key, "#{data}"), case: :lower))
+    end
   end
 
   defp generate_nonce do
